@@ -12,3 +12,4 @@ C:\Users\trexn\Desktop\Code\Advent of Code\AdventOfCode2022\AdventOfCode2022\obj
 C:\Users\trexn\Desktop\Code\Advent of Code\AdventOfCode2022\AdventOfCode2022\obj\Debug\net6.0\ref\AdventOfCode2022.dll
 C:\Users\trexn\Desktop\Code\Advent of Code\AdventOfCode2022\AdventOfCode2022\obj\Debug\net6.0\AdventOfCode2022.pdb
 C:\Users\trexn\Desktop\Code\Advent of Code\AdventOfCode2022\AdventOfCode2022\obj\Debug\net6.0\AdventOfCode2022.genruntimeconfig.cache
+C:\Users\trexn\Desktop\Code\Advent of Code\AdventOfCode2022\AdventOfCode2022\obj\Debug\net6.0\AdventOfCode2022.csproj.AssemblyReference.cache
