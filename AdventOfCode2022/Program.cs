@@ -6,6 +6,7 @@
     Console.WriteLine(String.Format("Day 2 part 2: {0}", GetRockPaperScissorsLosses()));
 
     Console.WriteLine(String.Format("Day 3 part 1: {0}", GetRucksackPriorities()));
+    Console.WriteLine(String.Format("Day 3 part 2: {0}", GetBadgesPriorities()));
 }
 
 static int GetMostCalories(bool top3=false)
@@ -106,6 +107,10 @@ static int GetRockPaperScissorsLosses()
     return score;
 }
 
+static int GetCharRucksackPriority(char c) {
+    return ((int)c) < 97 ? (((int)c) - 64 + 26) : ((((int)c)) - 96);
+}
+
 static int GetRucksackPriorities() {
     string filename = "day3inputs.txt";
 
@@ -118,7 +123,29 @@ static int GetRucksackPriorities() {
 
         foreach (char c in compartment1) {
             if (compartment2.Contains(c)) {
-                int charval = ((int)c) < 97 ? (((int)c) - 64 + 26) : ((((int)c)) - 96);
+                int charval = GetCharRucksackPriority(c);
+                priorities = priorities + charval;
+                break;
+            }
+        }
+    }
+
+    return priorities;
+}
+
+static int GetBadgesPriorities() {
+    string filename = "day3inputs.txt";
+    int priorities = 0;
+
+    string[] contents = File.ReadAllLines(filename);
+    for (int x = 0; x < contents.Length; x = x + 3) {
+        string bag1 = contents[x];
+        string bag2 = contents[x+1];
+        string bag3 = contents[x+2];
+
+        foreach (char c in bag1) {
+            if (bag2.Contains(c) && bag3.Contains(c)) {
+                int charval = GetCharRucksackPriority(c);
                 priorities = priorities + charval;
                 break;
             }
