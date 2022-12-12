@@ -1,12 +1,15 @@
 ﻿static void Run() {
-    Console.WriteLine(String.Format("Day 1 part 1: {0}", GetMostCalories()));
+    /*Console.WriteLine(String.Format("Day 1 part 1: {0}", GetMostCalories()));
     Console.WriteLine(String.Format("Day 1 part 2: {0}", GetMostCalories(true)));
 
     Console.WriteLine(String.Format("Day 2 part 1: {0}", GetRockPaperScissors()));
     Console.WriteLine(String.Format("Day 2 part 2: {0}", GetRockPaperScissorsLosses()));
 
     Console.WriteLine(String.Format("Day 3 part 1: {0}", GetRucksackPriorities()));
-    Console.WriteLine(String.Format("Day 3 part 2: {0}", GetBadgesPriorities()));
+    Console.WriteLine(String.Format("Day 3 part 2: {0}", GetBadgesPriorities()));*/
+
+    Console.WriteLine(String.Format("Day 4 part 1: {0}", GetFullOverlapSections()));
+    Console.WriteLine(String.Format("Day 4 part 2: {0}", GetOverlapSections()));
 }
 
 static int GetMostCalories(bool top3=false)
@@ -153,6 +156,52 @@ static int GetBadgesPriorities() {
     }
 
     return priorities;
+}
+
+static int GetFullOverlapSections() {
+    string filename = "day4inputs.txt";
+    int num = 0;
+
+    string[] contents = File.ReadAllLines(filename);
+    for (int x = 0; x < contents.Length; x++) {
+        string[] pairs = contents[x].Split(',');
+        string[] firstnums = pairs[0].Split('-');
+        string[] secondnums = pairs[1].Split('-');
+
+        bool betweenfirst = Convert.ToInt32(firstnums[0]) >= Convert.ToInt32(secondnums[0]) && Convert.ToInt32(firstnums[1]) <= Convert.ToInt32(secondnums[1]);
+        bool betweensecond = Convert.ToInt32(secondnums[0]) >= Convert.ToInt32(firstnums[0]) && Convert.ToInt32(secondnums[1]) <= Convert.ToInt32(firstnums[1]);
+
+        if (betweenfirst || betweensecond)
+        {
+            num++;
+        }
+    }
+
+    return num;
+}
+
+static int GetOverlapSections()
+{
+    string filename = "day4inputs.txt";
+    int num = 0;
+
+    string[] contents = File.ReadAllLines(filename);
+    for (int x = 0; x < contents.Length; x++)
+    {
+        string[] pairs = contents[x].Split(',');
+        string[] firstnums = pairs[0].Split('-');
+        string[] secondnums = pairs[1].Split('-');
+
+        bool betweenfirst = Convert.ToInt32(firstnums[0]) >= Convert.ToInt32(secondnums[0]) && Convert.ToInt32(firstnums[0]) <= Convert.ToInt32(secondnums[1]);
+        bool betweensecond = Convert.ToInt32(secondnums[0]) >= Convert.ToInt32(firstnums[0]) && Convert.ToInt32(secondnums[0]) <= Convert.ToInt32(firstnums[1]);
+
+        if (betweenfirst || betweensecond)
+        {
+            num++;
+        }
+    }
+
+    return num;
 }
 
 Run();
