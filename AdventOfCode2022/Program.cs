@@ -12,6 +12,7 @@
     Console.WriteLine(String.Format("Day 4 part 2: {0}", GetOverlapSections()));*/
 
     Console.WriteLine(String.Format("Day 5 part 1: {0}", GetTopCrates()));
+    Console.WriteLine(String.Format("Day 5 part 2: {0}", GetTopCrates(true)));
 }
 
 static int GetMostCalories(bool top3=false)
@@ -206,7 +207,7 @@ static int GetOverlapSections()
     return num;
 }
 
-static string GetTopCrates() {
+static string GetTopCrates(bool is9001=false) {
     string filename = "day5inputs.txt";
 
     List<List<string>> stacks = new List<List<string>>();
@@ -226,11 +227,18 @@ static string GetTopCrates() {
         int movefrom = Convert.ToInt32(contents[x].Split("from ")[1].Split(" to")[0]) - 1;
         int moveto = Convert.ToInt32(contents[x].Split("to ")[1]) - 1;
 
+        List<string> orderedList = new List<string>();
         for (int i = 0; i < moveamt; i++) {
             if (stacks[movefrom].Count > 0) {
                 string val = stacks[movefrom][stacks[movefrom].Count - 1];
                 stacks[movefrom].RemoveAt(stacks[movefrom].Count - 1);
-                stacks[moveto].Add(val);
+                if (is9001) { orderedList.Add(val); } else { stacks[moveto].Add(val); }
+            }
+        }
+
+        if (is9001) {
+            for (int i = orderedList.Count-1; i >= 0; i--) {
+                stacks[moveto].Add(orderedList[i]);
             }
         }
     } 
