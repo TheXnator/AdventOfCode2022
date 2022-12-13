@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trexn\\Desktop\\Code\\Advent of Code\\AdventOfCode2022\\AdventOfCode2022\\AdventOfCode2022.csproj": {}
+    "C:\\Users\\trexn\\OneDrive\\Desktop\\Files\\Zac\\Advent of Code\\AdventOfCode2022\\AdventOfCode2022\\AdventOfCode2022.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trexn\\Desktop\\Code\\Advent of Code\\AdventOfCode2022\\AdventOfCode2022\\AdventOfCode2022.csproj": {
+    "C:\\Users\\trexn\\OneDrive\\Desktop\\Files\\Zac\\Advent of Code\\AdventOfCode2022\\AdventOfCode2022\\AdventOfCode2022.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trexn\\Desktop\\Code\\Advent of Code\\AdventOfCode2022\\AdventOfCode2022\\AdventOfCode2022.csproj",
+        "projectUniqueName": "C:\\Users\\trexn\\OneDrive\\Desktop\\Files\\Zac\\Advent of Code\\AdventOfCode2022\\AdventOfCode2022\\AdventOfCode2022.csproj",
         "projectName": "AdventOfCode2022",
-        "projectPath": "C:\\Users\\trexn\\Desktop\\Code\\Advent of Code\\AdventOfCode2022\\AdventOfCode2022\\AdventOfCode2022.csproj",
+        "projectPath": "C:\\Users\\trexn\\OneDrive\\Desktop\\Files\\Zac\\Advent of Code\\AdventOfCode2022\\AdventOfCode2022\\AdventOfCode2022.csproj",
         "packagesPath": "C:\\Users\\trexn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\trexn\\Desktop\\Code\\Advent of Code\\AdventOfCode2022\\AdventOfCode2022\\obj\\",
+        "outputPath": "C:\\Users\\trexn\\OneDrive\\Desktop\\Files\\Zac\\Advent of Code\\AdventOfCode2022\\AdventOfCode2022\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\trexn\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,7 +48,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

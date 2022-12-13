@@ -6,10 +6,10 @@
     Console.WriteLine(String.Format("Day 2 part 2: {0}", GetRockPaperScissorsLosses()));
 
     Console.WriteLine(String.Format("Day 3 part 1: {0}", GetRucksackPriorities()));
-    Console.WriteLine(String.Format("Day 3 part 2: {0}", GetBadgesPriorities()));*/
+    Console.WriteLine(String.Format("Day 3 part 2: {0}", GetBadgesPriorities()));
 
     Console.WriteLine(String.Format("Day 4 part 1: {0}", GetFullOverlapSections()));
-    Console.WriteLine(String.Format("Day 4 part 2: {0}", GetOverlapSections()));
+    Console.WriteLine(String.Format("Day 4 part 2: {0}", GetOverlapSections()));*/
 
     Console.WriteLine(String.Format("Day 5 part 1: {0}", GetTopCrates()));
 }
@@ -222,7 +222,7 @@ static string GetTopCrates() {
 
     string[] contents = File.ReadAllLines(filename);
     for (int x = 0; x < contents.Length; x++) {
-        int moveamt = Convert.ToInt32(contents[x].Split("move ")[1].Split(" from")[0]) - 1;
+        int moveamt = Convert.ToInt32(contents[x].Split("move ")[1].Split(" from")[0]);
         int movefrom = Convert.ToInt32(contents[x].Split("from ")[1].Split(" to")[0]) - 1;
         int moveto = Convert.ToInt32(contents[x].Split("to ")[1]) - 1;
 
@@ -236,7 +236,7 @@ static string GetTopCrates() {
     } 
 
     string rtn = "";
-    for (int x = 0; x < stacks.Count-1; x++) {
+    for (int x = 0; x < stacks.Count; x++) {
         rtn = rtn + stacks[x][stacks[x].Count-1];
     }
 
