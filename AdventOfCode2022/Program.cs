@@ -10,6 +10,8 @@
 
     Console.WriteLine(String.Format("Day 4 part 1: {0}", GetFullOverlapSections()));
     Console.WriteLine(String.Format("Day 4 part 2: {0}", GetOverlapSections()));
+
+    Console.WriteLine(String.Format("Day 5 part 1: {0}", GetTopCrates()));
 }
 
 static int GetMostCalories(bool top3=false)
@@ -202,6 +204,43 @@ static int GetOverlapSections()
     }
 
     return num;
+}
+
+static string GetTopCrates() {
+    string filename = "day5inputs.txt";
+
+    List<List<string>> stacks = new List<List<string>>();
+    stacks.Add(new List<string>() { "F", "H", "B", "V", "R", "Q", "D", "P" });
+    stacks.Add(new List<string>() { "L", "D", "Z", "Q", "W", "V" });
+    stacks.Add(new List<string>() { "H", "L", "Z", "Q", "G", "R", "P", "C" });
+    stacks.Add(new List<string>() { "R", "D", "H", "F", "J", "V", "B"});
+    stacks.Add(new List<string>() { "Z", "W", "L", "C"});
+    stacks.Add(new List<string>() { "J", "R", "P", "N", "T", "G", "V", "M"});
+    stacks.Add(new List<string>() { "J", "R", "L", "V", "M", "B", "S"});
+    stacks.Add(new List<string>() { "D", "P", "J"});
+    stacks.Add(new List<string>() { "D", "C", "N", "W", "V" });
+
+    string[] contents = File.ReadAllLines(filename);
+    for (int x = 0; x < contents.Length; x++) {
+        int moveamt = Convert.ToInt32(contents[x].Split("move ")[1].Split(" from")[0]) - 1;
+        int movefrom = Convert.ToInt32(contents[x].Split("from ")[1].Split(" to")[0]) - 1;
+        int moveto = Convert.ToInt32(contents[x].Split("to ")[1]) - 1;
+
+        for (int i = 0; i < moveamt; i++) {
+            if (stacks[movefrom].Count > 0) {
+                string val = stacks[movefrom][stacks[movefrom].Count - 1];
+                stacks[movefrom].RemoveAt(stacks[movefrom].Count - 1);
+                stacks[moveto].Add(val);
+            }
+        }
+    } 
+
+    string rtn = "";
+    for (int x = 0; x < stacks.Count-1; x++) {
+        rtn = rtn + stacks[x][stacks[x].Count-1];
+    }
+
+    return rtn;
 }
 
 Run();
